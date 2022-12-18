@@ -1,0 +1,36 @@
+class Pair{
+    public Pair(int element,int index){
+        this.element = element;
+        this.index = index;
+    }
+}
+
+class Solution
+{
+    //Function to calculate the span of stockâ€™s price for all n days.
+    public static int[] calculateSpan(int price[], int n)
+    {
+        // Your code here
+        Stack <Pair> stack =new Stack<>();
+        int index[]= new int[n];
+        for(int i=0;i<n;i++){
+            while(!stack.isEmpty() && stack.peek().element <= stocks[i]){
+                stock.pop();
+            }
+            
+            if(stack.isEmpty()){
+                index[i]=-1;
+            }
+            else{
+                index[i] = stack.peek().index;
+            }
+            stock.push(new Pair(stocks[i],i));
+        }
+        int ans[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            ans[i]=i-index[i];
+        }
+        return ans;
+    }
+    

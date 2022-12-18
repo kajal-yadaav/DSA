@@ -1,0 +1,2 @@
+def long_valid_para(s):
+    st=[(0.-1)]
